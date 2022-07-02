@@ -1,0 +1,49 @@
+// Scroll down to "Start of user configuration"
+#version 140
+#define SHADER_DALTONIZE           0
+#define SHADERS                    1
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//------------------ Start of user configuration -----------------
+//----------------------------------------------------------------
+//---------- NOTE: All shaders are disabled by default -----------
+
+//----------------------------------------------------------------
+//---------------- Order the Shaders Will Be Run -----------------
+//----------------------------------------------------------------
+// Move up or down a SHADER_NAME to change the position it will be run.
+// For example, if you want Fake HDR to run before all the other shaders,
+// move SHADER_FAKE_HDR, above SHADER_DEBAND,
+const int SHADER_ORDER[SHADERS+1] = int[] ( // Don't change this line.
+
+    SHADER_DALTONIZE,
+
+SHADERS); // Don't change this line.
+
+//----------------------------------------------------------------
+//--------------- Daltonize configuration section ----------------
+//----------------------------------------------------------------
+
+// Set to 1 to enable.
+#define DALTONIZE_ENABLED 0
+#if DALTONIZE_ENABLED == 1 // Don't change this line.
+
+// Intenisty of the Daltonize effect
+//   Range: 0.0 to 1.0
+// Default: 1.0
+#define DALTONIZE_INTENSITY 1.0
+
+// Daltonization mode
+// 0 -> Protanopia
+// 1 -> Deuteranopia
+// 2 -> Tritanopia
+//   Range: 0 to 2
+// Default: 0
+#define DALTONIZE_MODE 0
+
+#endif
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------- End of user configuration --------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
